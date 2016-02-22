@@ -1,7 +1,7 @@
 package cse360assign3;
 
-/** This class contains a integer total
- * methods which operate on total and
+/** This class contains a integer total, 
+ * and methods which operate on total and
  * display the history of total. 
  * 
  * 	@author Nicholas Martinez PIN 601
