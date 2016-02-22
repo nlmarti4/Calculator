@@ -10,6 +10,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	String history = "0";
 	
 	/** Initializes value of total
 	 * 
@@ -29,34 +30,47 @@ public class Calculator {
 		return total;
 	}
 	
-	/** Adds value to total
+	/** Adds value to total and updates history
 	 * 
 	 * @param value	Value to be added to total
 	 * @return None
 	 */
 	public void add (int value) {
 		total = total + value;
+		history += " ";
+		history += "+";
+		history += " ";
+		history += value;	
 	}
 	
-	/** Subtracts value from total
+	/** Subtracts value from total and updates history
 	 * 
 	 * @param value	Value to be subtracted from total
 	 * @return None
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history += " ";
+		history += "-";
+		history += " ";
+		history += value;
 	}
 	
-	/** Multiplies total by value
+	/** Multiplies total by value and updates history
 	 * 
 	 * @param value	Value to be multiply by
 	 * @return None
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history += " ";
+		history += "*";
+		history += " ";
+		history += value;
 	}
 	
-	/** Divides total by value
+	/** Divides total by value and updates history
+	 * If dividing by zero, set total to 0
 	 * 
 	 * @param value	Value to be divide by
 	 * @return None
@@ -65,19 +79,27 @@ public class Calculator {
 		if (value == 0)
 		{
 			total = 0;
+			history += " ";
+			history += "/";
+			history += " ";
+			history += value;
 		}
 		else
 		{
 			total = total / value;
+			history += " ";
+			history += "/";
+			history += " ";
+			history += value;
 		}			
 	}
 	
 	/** Returns string that represents history of total
 	 * 
 	 * @param None
-	 * @return string	String that represents history of total
+	 * @return history	String that represents history of total
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }

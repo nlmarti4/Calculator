@@ -66,8 +66,28 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testGetHistory() {
-		fail("Not yet implemented");
+	public void testGetHistoryEmpty() {
+		Calculator testObj = new Calculator();
+		assertEquals("0", testObj.getHistory());
 	}
 
+	@Test
+	public void testGetHistory1() {
+		Calculator testObj = new Calculator();
+		testObj.add (4); 
+		testObj.subtract (2); 
+		testObj.multiply (2); 
+		testObj.add(5);
+		assertEquals("0 + 4 - 2 * 2 + 5", testObj.getHistory());
+	}
+	
+	@Test
+	public void testGetHistory2() {
+		Calculator testObj = new Calculator();
+		testObj.add (5); 
+		testObj.subtract (7); 
+		testObj.multiply (9); 
+		testObj.divide(0);
+		assertEquals("0 + 5 - 7 * 9 / 0", testObj.getHistory());
+	}
 }
